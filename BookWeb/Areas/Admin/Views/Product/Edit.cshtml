@@ -1,0 +1,58 @@
+﻿@model Product
+<h1>Edit product</h1>
+
+<form method="post">
+	<div>
+	<label asp-for="Title"></label>
+	<input asp-for="Title" type="text" />
+	<span asp-validation-for="Title"></span>
+	</div>
+
+	<div>
+	<label asp-for="Description"></label>
+	<input asp-for="Description" type="text" />
+	<span asp-validation-for="Description"></span>
+	</div>
+
+	<div>
+	<label asp-for="ISBN"></label>
+	<input asp-for="ISBN" type="text" />
+	<span asp-validation-for="ISBN"></span>
+	</div>
+
+	<div>
+	<label asp-for="Author"></label>
+	<input asp-for="Author" type="text" />
+	<span asp-validation-for="Author"></span>
+	</div>
+
+	<div>
+	<label asp-for="ListPrice"></label>
+	<input asp-for="ListPrice" type="text" />
+	<span asp-validation-for="ListPrice"></span>
+	</div>
+
+	<div>
+	<label asp-for="Price"></label>
+	<input asp-for="Price" type="text" />
+	<span asp-validation-for="Price"></span>
+	</div>
+
+
+	<div>
+	<label asp-for="Price50"></label>
+	<input asp-for="Price50" type="text" />
+	<span asp-validation-for="Price50"></span>
+	</div>
+
+	<div>
+	<label asp-for="Price100"></label>
+	<input asp-for="Price100" type="text" />
+	<span asp-validation-for="Price100"></span>
+	</div>
+
+	<button>Update</button>
+	<a asp-controller="Product" asp-action="Index">
+		Back to list
+	</a>
+</form>

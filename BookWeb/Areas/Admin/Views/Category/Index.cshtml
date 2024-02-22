@@ -1,0 +1,36 @@
+﻿@model List<Category>
+<partial name="_Notification" />
+
+<h1>Category list</h1>
+
+
+<table class="table table-bordered table-striped">
+	<thead>
+	<tr>
+		<th>Category name</th>
+
+		<th>Display Order</th>
+	</tr>
+	</thead>
+
+	<tbody>
+		@foreach (var obj in Model.OrderBy(u=>u.DisplayOrder))
+		{
+			<tr>
+				<td>@obj.Name</td>
+				<td>@obj.DisplayOrder</td>
+				<td>
+					<a asp-controller="Category" asp-action="Edit" asp-route-Id="@obj.Id">Edit</a>
+				</td>
+					<td>
+							<a asp-controller="Category" asp-action="Delete" asp-route-Id="@obj.Id">Delete </a>
+					</td>
+			</tr>
+		}
+	</tbody>
+</table>
+@* Knapp *@
+<a asp-controller="Category" asp-action="Create" >
+	Create a new category
+</a>
+</div>

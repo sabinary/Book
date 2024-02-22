@@ -1,0 +1,40 @@
+﻿@model List<Product>
+<partial name="_Notification" />
+
+<h1>Product list</h1>
+
+
+<table class="table table-bordered table-striped">
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>ISBN</th>
+		<th>Price</th>
+		<th>Author</th>
+		<th>Category</th>
+	</tr>
+	</thead>
+	<tbody>
+		@foreach (var obj in Model)
+		{
+			<tr>
+				<td>@obj.Title</td>
+				<td>@obj.ISBN</td>
+				<td>@obj.ListPrice</td>
+				<td>@obj.Author</td>
+				<td></td>
+				<td>
+					<a asp-controller="Product" asp-action="Edit" asp-route-Id="@obj.Id">Edit</a>
+				</td>
+					<td>
+							<a asp-controller="Product" asp-action="Delete" asp-route-Id="@obj.Id">Delete </a>
+					</td>
+			</tr>
+		}
+	</tbody>
+</table>
+@* Knapp *@
+<a asp-controller="Product" asp-action="Create" >
+	Create a new product
+</a>
+</div>
